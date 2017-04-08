@@ -54,7 +54,7 @@ public class DataManager {
         try (FileOutputStream fos = new FileOutputStream("books.txt"); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             for (Book book : books)
-                oos.writeObject(book);
+                book.writeExternal(oos);
 
         } catch (Exception ex) {
 
@@ -68,13 +68,17 @@ public class DataManager {
 
         Set<Book> books = new HashSet<>();
 
+        Book auxBook = new Book();
+
         try (FileInputStream fis = new FileInputStream("books.txt"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             while(fis.available() > 0) {
 
-                Book book = (Book) ois.readObject();
+                //Book book = (Book) auxBook.readExternal(ois);
 
-                books.add(book);
+                auxBook.readExternal(ois);
+
+                books.add(auxBook);
 
                 //System.out.printf("Название: %s \t Автор: %s \n", book.getTitle(), book.getAuthor());
             }
@@ -86,6 +90,8 @@ public class DataManager {
         }
 
         return books;
-
     }
+
+
+
 }

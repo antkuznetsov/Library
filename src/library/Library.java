@@ -94,23 +94,17 @@ public class Library {
             System.out.println(book);
         }
 
-        System.out.println("-----");
-
         for (BookInstance bookInstance:
                 store
                 ) {
             System.out.println(bookInstance);
         }
 
-        System.out.println("-----");
-
         for (Reader reader:
                 readers
                 ) {
             System.out.println(reader);
         }
-
-        System.out.println("-----");
 
         for (Booking booking:
                 bookings

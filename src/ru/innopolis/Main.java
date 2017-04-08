@@ -19,8 +19,8 @@ public class Main {
         //Reader max = new Reader("Максим", "Юрьевич", "Андреев", 431345);
 
         //Покупаем 2 книги (по несколько экземпляров)
-        //library.buyBook("Java. Полное руководство", "Герберт Шилдт", "978-5-8459-1759-1", 5, 2012);
-        //library.buyBook("Структуры данных и алгоритмы в Java", "Роберт Лафоре", "978-5-496-00740-5", 2, 2016);
+        //library.buyBook("Java. Полное руководство", "Герберт Шилдт", "978-5-8459-1759-1", 1, 2012);
+        //library.buyBook("Структуры данных и алгоритмы в Java", "Роберт Лафоре", "978-5-496-00740-5", 1, 2016);
 
         //Берем книгу
         //library.takeBook("Антон", "Александрович", "Кузнецов", 223445, "Java. Полное руководство");
@@ -36,14 +36,16 @@ public class Main {
         //DataManager.serializeToFile(library.getCatalog());
 
         //System.out.println("-----");
-        //System.out.println("Десириализуем");git remote add origin https://github.com/antkuznetsov/Library.gitgit push -u origin master
+        //System.out.println("Десириализуем");
 
         //DataManager.unSerialize();
 
         //System.out.println(DataManager.unSerialize());
 
+
         for(Book book : DataManager.unSerialize())
             library.buyBook(book.getTitle(), book.getAuthor(), book.getIsbn(), 1, book.getYear());
+
 
         //Показываем все данные
         library.showAllData();
