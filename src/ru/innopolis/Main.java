@@ -19,7 +19,7 @@ public class Main {
         //Reader max = new Reader("Максим", "Юрьевич", "Андреев", 431345);
 
         //Покупаем 2 книги (по несколько экземпляров)
-        //library.buyBook("Java. Полное руководство", "Герберт Шилдт", "978-5-8459-1759-1", 1, 2012);
+        library.buyBook("Java. Полное руководство", "Герберт Шилдт", "978-5-8459-1759-1", 1, 2012);
         //library.buyBook("Структуры данных и алгоритмы в Java", "Роберт Лафоре", "978-5-496-00740-5", 1, 2016);
 
         //Берем книгу
@@ -43,8 +43,8 @@ public class Main {
         //System.out.println(DataManager.unSerialize());
 
 
-        for(Book book : DataManager.unSerialize())
-            library.buyBook(book.getTitle(), book.getAuthor(), book.getIsbn(), 1, book.getYear());
+        //for(Book book : DataManager.unSerialize())
+            //library.buyBook(book.getTitle(), book.getAuthor(), book.getIsbn(), 1, book.getYear());
 
 
         //Показываем все данные

@@ -77,6 +77,10 @@ public class Library {
         bookings.remove(booking);
     }
 
+    public Set<BookInstance> getStore() {
+        return store;
+    }
+
     public Set<Book> getCatalog() {
         return catalog;
     }
@@ -86,6 +90,10 @@ public class Library {
         this.catalog = catalog;
     }
     */
+
+    public Set<Booking> getBookings() {
+        return bookings;
+    }
 
     public void showAllData() {
         for (Book book:
