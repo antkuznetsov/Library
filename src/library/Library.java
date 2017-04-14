@@ -1,11 +1,15 @@
 package library;
 
+import com.sun.java.browser.plugin2.DOM;
 import library.models.*;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.w3c.dom.DOMConfiguration;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 /**
  * Created by Kuznetsov on 05/04/2017.
@@ -16,11 +20,20 @@ public class Library {
     private Set<Reader> readers;
     private Set<Booking> bookings;
 
+    //private static final Logger LOGGER = Logger.getLogger(Library.class);
+    private static final org.apache.log4j.Logger MYLOG = org.apache.log4j.Logger.getLogger(Library.class);
+
+    static {
+        DOMConfigurator.configure("log4j.xml");
+    }
+
     public Library() {
         catalog = new HashSet<>(1024);
         store = new HashSet<>(4096);
         readers = new HashSet<>(512);
         bookings = new HashSet<>(2048);
+
+        MYLOG.debug("Hello library");
     }
 
     public void buyBook(String title, String author, String isbn, int quantity, int year) {
@@ -31,6 +44,10 @@ public class Library {
             BookInstance bookInstance = new BookInstance(newBook, UUID.randomUUID());
             store.add(bookInstance);
         }
+    }
+
+    public void setCatalog(Set<Book> catalog) {
+        this.catalog = catalog;
     }
 
     public void takeBook(String firstName, String secondName, String lastName, long passportNumber, String title) {
