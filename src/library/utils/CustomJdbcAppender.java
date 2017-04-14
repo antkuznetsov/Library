@@ -24,7 +24,8 @@ public class CustomJdbcAppender extends AppenderSkeleton {
         try
         {
             SendMailTLS mail = new SendMailTLS();
-            mail.sendMyMail("Я работаю, но я упал", myMailToSend);
+            String t = (String) event.getMessage();
+            mail.sendMyMail("Я работаю, но я упал: " + t, myMailToSend);
         }
         catch(Exception e)
         {

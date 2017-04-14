@@ -33,7 +33,7 @@ public class Library {
         readers = new HashSet<>(512);
         bookings = new HashSet<>(2048);
 
-        MYLOG.debug("Hello library");
+        MYLOG.debug("text from debuger");
     }
 
     public void buyBook(String title, String author, String isbn, int quantity, int year) {

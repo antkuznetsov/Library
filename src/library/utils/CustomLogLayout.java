@@ -12,15 +12,12 @@ public class CustomLogLayout extends PatternLayout
     public String format(LoggingEvent event)
     {
 
-        //UserObject user = (UserObject)event.getMessage();
+        String text = (String) event.getMessage();
 
         StringBuffer sb = new StringBuffer();
 
-        //String name = user.getName();
-        //String age= user.getAge();
-        //String country= user.getCountry();
-
-        sb.append("Я упал :(");
+        sb.append("Информация 1");
+        sb.append(text);
 
         return sb.toString();
     }
